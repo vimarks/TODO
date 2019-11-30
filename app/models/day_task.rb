@@ -1,0 +1,2 @@
+class DayTask < ApplicationRecord
+end

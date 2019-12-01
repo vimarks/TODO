@@ -8,7 +8,7 @@ class CreateTasks < ActiveRecord::Migration[6.0]
       t.string :description
       t.integer :duration
       t.string :priority
-      t.DateTime :deadline
+      t.datetime :deadline
       t.boolean :is_completed
 
       t.timestamps

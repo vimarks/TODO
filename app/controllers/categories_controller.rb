@@ -8,9 +8,23 @@ class CategoriesController < ApplicationController
 
   def create
     categoryName = params["name"]
-    Category.create(name: categoryName)
+    user_id = params["user_id"]
 
-    render json: {name: categoryName}
+    cat = Category.new(
+      name: categoryName,
+      user_id: user_id)
+    if cat.save
+      render json:{
+        name: cat.name,
+        user_id: cat.user_id,
+        id: cat.id
+      }
+    else
+      render json: {
+        status: 400,
+        message: "these the cats you're looking for"
+      }
+    end
 
   end
 end

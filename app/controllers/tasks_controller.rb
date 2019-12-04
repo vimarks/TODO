@@ -3,7 +3,10 @@ class TasksController < ApplicationController
   def index
     tasks = Task.all.select{ |task| task.user_id === 1 }
     categories = Category.all.select{ |category| category.user_id === 1 }
-    render json: tasks
+    render json: {
+      tasks: tasks,
+      categories: categories
+    }
   end
 
   def create

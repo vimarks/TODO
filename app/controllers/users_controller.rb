@@ -11,6 +11,7 @@ class UsersController < ApplicationController
         status:500,
         errors: ['no users found']
       }
+    end
   end
 
   def show
@@ -46,7 +47,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation)
   end
 
 end

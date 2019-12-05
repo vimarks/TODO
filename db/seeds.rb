@@ -4,8 +4,8 @@ user3 = User.create(username: "Nutmeggy5", password_digest: "12345")
 
 
 
-category1 = Category.create(name: "pets")
-category2 = Category.create(name: "cars")
+category1 = Category.create(name: "pets", user_id: 1)
+category2 = Category.create(name: "cars", user_id: 2)
 
 location1 = Location.create(name: "home", lat: "44", long: "55")
 
@@ -16,58 +16,3 @@ task2 = Task.create(user_id: 1, location_id: 1, priority: "low", duration: 60, d
 
 task3 = Task.create(user_id: 3, location_id: 1, priority: "low", duration: 30, description: "Jump as high as I can", name: "Jump on trampoline",
                                 category_id: 2, deadline: nil, is_completed: false )
-
-
-
-
-
-
-# users = [
-#   {
-#     "username" => "Pabstbottle7",
-#     "password_digest" => "12345"
-#   },
-#   {
-#     "username" => "Nutmeggy5",
-#     "password_digest" => "mormon"
-#   }
-# ]
-#
-# categories = [
-#   {
-#     "name" => "car"
-#   },
-#   {
-#     "name" => "pet"
-#   }
-# ]
-#
-# tasks = [
-#   {
-#     "name" => "Walk the dog",
-#     "description" => "Around the block and up the hill, run'm hard",
-#     "location_id" => 1,
-#     "category_id" => 1,
-#     "priority" => "high",
-#     "user_id" => 1,
-#     "duration" => 20,
-#     "is_completed" => false,
-#     "deadline" => "2018-01-02 04:57"
-#   },
-#   {
-#     "name" => "Change the oil",
-#     "description" => "Tesla needs an oil-change",
-#     "location_id" => 2,
-#     "category_id" => 2,
-#     "priority" => "high",
-#     "user_id" => 1,
-#     "duration" => 60,
-#     "is_completed" => false,
-#     "deadline" => "2018-01-02 04:57"
-#   }
-# ]
-
-# tasks.each do |x|
-#   task = Task.create(name: x["name"], description: x["description"], location_id: x["location_id"], category_id: x["category_id"],
-#   priority: x["priority"], user_id: x["user_id"], duration: x["duration"], is_completed: x["is_completed"], deadline: x["deadline"] )
-# end

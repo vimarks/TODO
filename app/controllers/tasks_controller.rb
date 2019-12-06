@@ -24,7 +24,13 @@ class TasksController < ApplicationController
         locations: locations
       }
     end
+  end
 
+  def update
+    task = Task.find(params[:id])
+    task.is_completed = !task.is_completed
+    task.save
+    render json: task
   end
 
   def create

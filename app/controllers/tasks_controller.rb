@@ -50,9 +50,14 @@ class TasksController < ApplicationController
     user_id: user_id,
     location_id: location_id,
     category_id: category_id)
-
+    puts task
     if task.save
       render json: task
+    else
+      render json: {
+        status: 400,
+        error: "unable to save"
+      }
     end
 
   end

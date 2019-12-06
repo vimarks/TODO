@@ -58,7 +58,9 @@ class TasksController < ApplicationController
     category_id: category_id)
     puts task
     if task.save
-      render json: task
+      category = Category.find(task.category_id)
+      location = Location.find(task.location_id)
+      render json: {task: task, category: category, location: location}
     else
       render json: {
         status: 400,
